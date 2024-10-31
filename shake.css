@@ -1,18 +1,41 @@
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
 body {
-  color: black;
-  background: white;
-  background-position: top left;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+    color: black;
+    background: white;
+    background-position: top left;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    max-width: 800px;
+    margin: auto;
 }
 
 .play {
-  font-family: sans-serif;
-  font-size: 150%;
-  font-weight: bold;
+    font-family: "Crimson Text", Baskerville, "Baskerville Old Face",
+        "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: 150%;
+    font-weight: bold;
 }
 
 .nav {
-  font-family: sans-serif;
+    font-family: "Crimson Text", Baskerville, "Baskerville Old Face",
+        "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Crimson Text", Baskerville, "Baskerville Old Face",
+        "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: justify;
+}
