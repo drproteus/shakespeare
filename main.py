@@ -8,6 +8,8 @@ BUILD_DIR = "./build"
 TEMPLATE_DIR = "./templates"
 IGNORE_DIRS = [".git", "assets"]
 
+PATH_PREFIX = os.getenv("PATH_PREFIX", "/")
+
 env = Environment(
     loader=FileSystemLoader(TEMPLATE_DIR),
     autoescape=select_autoescape(),
@@ -18,13 +20,14 @@ def render_html(path):
         for subpath in os.listdir(path):
             render_html(os.path.join(path, subpath))
         return
-    # print(path, get_depth(path))
     relpath = pathlib.Path(path).relative_to(TEMPLATE_DIR)
-    parts = str(relpath).split(os.path.sep)
-    depth = len(parts) - 1
-    static_shake_css = os.path.join(*([".."] * depth + ["css/shake.css"]))
+    # parts = str(relpath).split(os.path.sep)
+    # depth = len(parts) - 1
+    # static_shake_css = os.path.join(*([".."] * depth + ["css/shake.css"]))
     template = env.get_template(str(relpath))
-    html = template.render(static_shake_css=static_shake_css)
+    html = template.render(
+        prefix=PATH_PREFIX,
+    )
     os.makedirs(os.path.join(BUILD_DIR, relpath.parent), exist_ok=True)
     with open(os.path.join(BUILD_DIR, str(relpath)), "w") as f:
         f.write(html)
