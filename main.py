@@ -9,7 +9,9 @@ TEMPLATE_DIR = "./templates"
 IGNORE_DIRS = [".git", "assets"]
 
 PATH_PREFIX = os.getenv("PATH_PREFIX", "/")
-# Ensure trailing slash to prefix.
+# Ensure enclosing slashes, absolute path is assumed.
+if not PATH_PREFIX.startswith("/"):
+    PATH_PREFIX = "/" + PATH_PREFIX
 if not PATH_PREFIX.endswith("/"):
     PATH_PREFIX += "/"
 
