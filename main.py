@@ -9,6 +9,9 @@ TEMPLATE_DIR = "./templates"
 IGNORE_DIRS = [".git", "assets"]
 
 PATH_PREFIX = os.getenv("PATH_PREFIX", "/")
+# Ensure trailing slash to prefix.
+if not PATH_PREFIX.endswith("/"):
+    PATH_PREFIX += "/"
 
 env = Environment(
     loader=FileSystemLoader(TEMPLATE_DIR),
