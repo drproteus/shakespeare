@@ -32,6 +32,7 @@ def render_html(path):
 
 def main():
     os.makedirs(BUILD_DIR, exist_ok=True)
+    shutil.copy("assets/robots.txt", os.path.join(BUILD_DIR, "robots.txt"))
     shutil.copy("assets/favicon.ico", os.path.join(BUILD_DIR, "favicon.ico"))
     shutil.copytree("assets/css", os.path.join(BUILD_DIR, "css"))
     shutil.copytree("assets/images", os.path.join(BUILD_DIR, "images"))
