@@ -39,3 +39,24 @@ body {
     font-family: Georgia, "Times New Roman", Times, serif;
     text-align: justify;
 }
+
+#toc,
+#toc * {
+    border-style: none;
+}
+
+#toc {
+    margin: auto;
+}
+
+#toc h2 {
+    margin-bottom: 0;
+}
+
+#intro {
+    margin: 0;
+}
+
+#intro img {
+    padding: 0 10px 0 10px;
+}
